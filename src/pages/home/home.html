@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Hello!!!</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item-group *ngFor="let x of Jokes">
+      <ion-card>
+        <ion-card-header text-center>
+          <h1> {{x.type}} - {{x.id}} </h1>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            {{x.setup}}
+            <br>
+            <b> {{x.punchline}} </b>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>

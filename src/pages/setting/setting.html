@@ -1,0 +1,29 @@
+<!--
+  Generated template for the Setting page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item-group>
+    <ion-item>
+      <ion-label>Number of Jokes: </ion-label>
+      <ion-select [(ngModel)]="numberJokes">
+        <ion-option *ngFor="let x of numberArray">
+          <ion-option value="x">{{x}}</ion-option>
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button block (click)="saveChange()"> Save change </button>
+  </ion-item-group>
+
+</ion-content>
